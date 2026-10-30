@@ -1,0 +1,29 @@
+#incl15:41 30/10/2026ude <iostream>
+#include <stack>
+using namespace std;
+
+int main() {
+    stack<int> residuos;
+    int numero;
+
+    cin >> numero;
+
+    if (numero == 0) {
+        cout << 0 << endl;
+        return 0;
+    }
+
+    int aux = numero;
+    while (aux > 0) {
+        residuos.push(aux % 2);
+        aux /= 2;
+    }
+
+    while (!residuos.empty()) {
+        cout << residuos.top();
+        residuos.pop();
+    }
+    cout << endl;
+
+    return 0;
+}
